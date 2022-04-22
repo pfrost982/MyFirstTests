@@ -40,4 +40,14 @@ class EmailValidatorTest {
     fun emailValidator_NullEmail_ReturnsFalse() {
         assertFalse(EmailValidator.isValidEmail(null))
     }
+
+    @Test
+    fun `empty domain`() {
+        assertFalse(EmailValidator.isValidEmail("name@email."))
+    }
+
+    @Test
+    fun `) in name`() {
+        assertFalse(EmailValidator.isValidEmail("na)me@email.com"))
+    }
 }
